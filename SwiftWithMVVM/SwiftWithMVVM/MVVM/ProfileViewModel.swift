@@ -18,7 +18,7 @@ class ProfileViewModel {
 
 extension ProfileViewModel {
     func timeForProfile() -> String {
-        return string(fromTimeInterval: profile.duration)
+        return profile.duration.toString()
     }
     
     func numberOfRows(forSegmentOfType type: SegmentType) -> Int {
@@ -38,7 +38,7 @@ extension ProfileViewModel {
     
     func timeForSegment(ofType type: SegmentType) -> String {
         guard let segment = profile.segment(ofType: type) else { return "00:00" }
-        return string(fromTimeInterval: segment.duration)
+        return segment.duration.toString()
     }
     
     func segmentEnabled(ofType type: SegmentType) -> Bool {
@@ -72,22 +72,6 @@ extension ProfileViewModel {
             sound.enabled = enabled
             segment.sounds.append(sound)
             profile.segments.append(segment)
-        }
-    }
-}
-
-extension ProfileViewModel {
-    private func string(fromTimeInterval timeInterval: Double) -> String {
-        let timeInterval = Int(timeInterval)
-        
-        let hours = timeInterval / 3600
-        let seconds = timeInterval % 60
-        let minutes = (timeInterval / 60) % 60
-        
-        if hours > 0 {
-            return String(format: "%02d:%02d:%02d", hours, seconds, minutes)
-        } else {
-            return String(format: "%02d:%02d", seconds, minutes)
         }
     }
 }

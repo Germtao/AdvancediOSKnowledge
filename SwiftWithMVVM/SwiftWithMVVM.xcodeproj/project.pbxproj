@@ -12,7 +12,6 @@
 		3BBED74422769B7800E7C45B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BBED74222769B7800E7C45B /* Main.storyboard */; };
 		3BBED74622769B7C00E7C45B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BBED74522769B7C00E7C45B /* Assets.xcassets */; };
 		3BBED74922769B7C00E7C45B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BBED74722769B7C00E7C45B /* LaunchScreen.storyboard */; };
-		3BBED75422769B7C00E7C45B /* SwiftWithMVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED75322769B7C00E7C45B /* SwiftWithMVVMTests.swift */; };
 		3BBED75F22769B7C00E7C45B /* SwiftWithMVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED75E22769B7C00E7C45B /* SwiftWithMVVMUITests.swift */; };
 		3BBED77122769C0600E7C45B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED77022769C0600E7C45B /* Profile.swift */; };
 		3BBED7752276A16400E7C45B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7742276A16400E7C45B /* ProfileViewController.swift */; };
@@ -21,6 +20,8 @@
 		3BBED77B2276C31800E7C45B /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BBED7792276C31800E7C45B /* ProfileTableViewCell.xib */; };
 		3BBED77E2276CDF500E7C45B /* ProfileSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED77C2276CDF500E7C45B /* ProfileSwitchTableViewCell.swift */; };
 		3BBED77F2276CDF500E7C45B /* ProfileSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BBED77D2276CDF500E7C45B /* ProfileSwitchTableViewCell.xib */; };
+		3BBED7812276FB2300E7C45B /* ProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7802276FB2300E7C45B /* ProfileViewModelTests.swift */; };
+		3BBED7832276FD5F00E7C45B /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7822276FD5F00E7C45B /* Double.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,6 @@
 		3BBED74822769B7C00E7C45B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BBED74A22769B7C00E7C45B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBED74F22769B7C00E7C45B /* SwiftWithMVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftWithMVVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BBED75322769B7C00E7C45B /* SwiftWithMVVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftWithMVVMTests.swift; sourceTree = "<group>"; };
 		3BBED75522769B7C00E7C45B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBED75A22769B7C00E7C45B /* SwiftWithMVVMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftWithMVVMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBED75E22769B7C00E7C45B /* SwiftWithMVVMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftWithMVVMUITests.swift; sourceTree = "<group>"; };
@@ -61,6 +61,8 @@
 		3BBED7792276C31800E7C45B /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		3BBED77C2276CDF500E7C45B /* ProfileSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		3BBED77D2276CDF500E7C45B /* ProfileSwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileSwitchTableViewCell.xib; sourceTree = "<group>"; };
+		3BBED7802276FB2300E7C45B /* ProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelTests.swift; sourceTree = "<group>"; };
+		3BBED7822276FD5F00E7C45B /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +127,7 @@
 		3BBED75222769B7C00E7C45B /* SwiftWithMVVMTests */ = {
 			isa = PBXGroup;
 			children = (
-				3BBED75322769B7C00E7C45B /* SwiftWithMVVMTests.swift */,
+				3BBED7802276FB2300E7C45B /* ProfileViewModelTests.swift */,
 				3BBED75522769B7C00E7C45B /* Info.plist */,
 			);
 			path = SwiftWithMVVMTests;
@@ -150,6 +152,7 @@
 				3BBED77D2276CDF500E7C45B /* ProfileSwitchTableViewCell.xib */,
 				3BBED77022769C0600E7C45B /* Profile.swift */,
 				3BBED7762276A87900E7C45B /* ProfileViewModel.swift */,
+				3BBED7822276FD5F00E7C45B /* Double.swift */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 					};
 					3BBED74E22769B7C00E7C45B = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 3BBED73A22769B7800E7C45B;
 					};
 					3BBED75922769B7C00E7C45B = {
@@ -289,6 +293,7 @@
 			files = (
 				3BBED74122769B7800E7C45B /* ViewController.swift in Sources */,
 				3BBED77122769C0600E7C45B /* Profile.swift in Sources */,
+				3BBED7832276FD5F00E7C45B /* Double.swift in Sources */,
 				3BBED77E2276CDF500E7C45B /* ProfileSwitchTableViewCell.swift in Sources */,
 				3BBED7752276A16400E7C45B /* ProfileViewController.swift in Sources */,
 				3BBED77A2276C31800E7C45B /* ProfileTableViewCell.swift in Sources */,
@@ -301,7 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BBED75422769B7C00E7C45B /* SwiftWithMVVMTests.swift in Sources */,
+				3BBED7812276FB2300E7C45B /* ProfileViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +508,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftWithMVVMTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -512,6 +518,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.unitTao.SwiftWithMVVMTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftWithMVVM.app/SwiftWithMVVM";
@@ -523,6 +530,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftWithMVVMTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
