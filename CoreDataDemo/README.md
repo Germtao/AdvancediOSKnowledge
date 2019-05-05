@@ -53,8 +53,31 @@ class ViewController: UIViewController {
 请注意，视图控制器专门监视它具有引用的托管对象上下文。如果将`nil`作为`addObserver`的最后一个参数`（_：selector：name：object :)`传递，则视图控制器将接收应用程序创建的每个托管对象上下文的通知。虽然这看起来很方便，但如果您正在使用复杂的`Core Data`堆栈，这可能会非常难以理解。在大多数情况下，建议监视特定的托管对象上下文。
 
 ## 处理通知
-由观察托管对象上下文的对象决定如何处理它接收的信息。通知的`object`属性是发布通知的托管对象上下文。 如果对象正在观察多个托管对象上下文，则可以检查对象属性以找出发布通知的托管对象上下文。感兴趣的信息存储在通知对象的userInfo字典中，userInfo字典包括三个重要的键:
+由观察托管对象上下文的对象决定如何处理它接收的信息。通知的`object`属性是发布通知的托管对象上下文。 如果对象正在观察多个托管对象上下文，则可以检查对象属性以找出发布通知的托管对象上下文。感兴趣的信息存储在通知对象的`userInfo`字典中，`userInfo`字典包括三个重要的键:
 
 * `NSInsertedObjectsKey`
 * `NSUpdatedObjectsKey`
 * `NSDeletedObjectsKey`
+
+每个`key`对应于一组托管对象。 这些集包含从发布通知的托管对象上下文中插入、更新和删除的托管对象。
+
+```
+    @objc private func managedObjectContextObjectsDidChange(_ notification: Notification) {
+        guard let userinfo = notification.userInfo else { return }
+        
+        if let inserts = userinfo[NSInsertedObjectsKey] as? Set<NSManagedObject>,
+            inserts.count > 0 {
+            
+        }
+        
+        if let updates = userinfo[NSUpdatedObjectsKey] as? Set<NSManagedObject>,
+            updates.count > 0 {
+            
+        }
+        
+        if let deletes = userinfo[NSDeletedObjectsKey] as? Set<NSManagedObject>,
+            deletes.count > 0 {
+            
+        }
+    }
+```
