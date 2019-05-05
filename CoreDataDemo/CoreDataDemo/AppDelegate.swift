@@ -12,10 +12,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    let coreDataManager = CoreDataManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let navi = storyboard.instantiateInitialViewController() as? UINavigationController,
+            let vc = navi.viewControllers.first as? ViewController {
+            vc.managedObjectContext = coreDataManager.managedObjectContext
+            
+            window?.rootViewController = navi
+        }
+        
         return true
     }
 
@@ -25,8 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        coreDataManager.saveContext()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -38,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        coreDataManager.saveContext()
     }
 
 

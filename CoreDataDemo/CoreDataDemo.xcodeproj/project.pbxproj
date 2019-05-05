@@ -12,6 +12,14 @@
 		3BBED7B6227E8C0600E7C45B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BBED7B4227E8C0600E7C45B /* Main.storyboard */; };
 		3BBED7B8227E8C0700E7C45B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BBED7B7227E8C0700E7C45B /* Assets.xcassets */; };
 		3BBED7BB227E8C0700E7C45B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BBED7B9227E8C0700E7C45B /* LaunchScreen.storyboard */; };
+		3BBED7C7227EC71A00E7C45B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7C6227EC71A00E7C45B /* UserViewController.swift */; };
+		3BBED7C9227EC72900E7C45B /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7C8227EC72900E7C45B /* AddNoteViewController.swift */; };
+		3BBED7CB227ECCDF00E7C45B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7CA227ECCDF00E7C45B /* CoreDataManager.swift */; };
+		3BBED7CE227ECE9300E7C45B /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7CC227ECE9300E7C45B /* Notes.xcdatamodeld */; };
+		3BBED7DF227EEC9100E7C45B /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7DB227EEC9100E7C45B /* Note+CoreDataClass.swift */; };
+		3BBED7E0227EEC9100E7C45B /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7DC227EEC9100E7C45B /* Note+CoreDataProperties.swift */; };
+		3BBED7E1227EEC9100E7C45B /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7DD227EEC9100E7C45B /* User+CoreDataClass.swift */; };
+		3BBED7E2227EEC9100E7C45B /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7DE227EEC9100E7C45B /* User+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +30,14 @@
 		3BBED7B7227E8C0700E7C45B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BBED7BA227E8C0700E7C45B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BBED7BC227E8C0700E7C45B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BBED7C6227EC71A00E7C45B /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		3BBED7C8227EC72900E7C45B /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		3BBED7CA227ECCDF00E7C45B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		3BBED7CD227ECE9300E7C45B /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
+		3BBED7DB227EEC9100E7C45B /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3BBED7DC227EEC9100E7C45B /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3BBED7DD227EEC9100E7C45B /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3BBED7DE227EEC9100E7C45B /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +70,16 @@
 		3BBED7AF227E8C0600E7C45B /* CoreDataDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3BBED7DB227EEC9100E7C45B /* Note+CoreDataClass.swift */,
+				3BBED7DC227EEC9100E7C45B /* Note+CoreDataProperties.swift */,
+				3BBED7DD227EEC9100E7C45B /* User+CoreDataClass.swift */,
+				3BBED7DE227EEC9100E7C45B /* User+CoreDataProperties.swift */,
 				3BBED7B0227E8C0600E7C45B /* AppDelegate.swift */,
 				3BBED7B2227E8C0600E7C45B /* ViewController.swift */,
+				3BBED7C6227EC71A00E7C45B /* UserViewController.swift */,
+				3BBED7C8227EC72900E7C45B /* AddNoteViewController.swift */,
+				3BBED7CA227ECCDF00E7C45B /* CoreDataManager.swift */,
+				3BBED7CC227ECE9300E7C45B /* Notes.xcdatamodeld */,
 				3BBED7B4227E8C0600E7C45B /* Main.storyboard */,
 				3BBED7B7227E8C0700E7C45B /* Assets.xcassets */,
 				3BBED7B9227E8C0700E7C45B /* LaunchScreen.storyboard */,
@@ -136,7 +160,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BBED7B3227E8C0600E7C45B /* ViewController.swift in Sources */,
+				3BBED7E0227EEC9100E7C45B /* Note+CoreDataProperties.swift in Sources */,
+				3BBED7DF227EEC9100E7C45B /* Note+CoreDataClass.swift in Sources */,
+				3BBED7C7227EC71A00E7C45B /* UserViewController.swift in Sources */,
+				3BBED7C9227EC72900E7C45B /* AddNoteViewController.swift in Sources */,
+				3BBED7E1227EEC9100E7C45B /* User+CoreDataClass.swift in Sources */,
+				3BBED7CE227ECE9300E7C45B /* Notes.xcdatamodeld in Sources */,
 				3BBED7B1227E8C0600E7C45B /* AppDelegate.swift in Sources */,
+				3BBED7E2227EEC9100E7C45B /* User+CoreDataProperties.swift in Sources */,
+				3BBED7CB227ECCDF00E7C45B /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +366,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3BBED7CC227ECE9300E7C45B /* Notes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3BBED7CD227ECE9300E7C45B /* Notes.xcdatamodel */,
+			);
+			currentVersion = 3BBED7CD227ECE9300E7C45B /* Notes.xcdatamodel */;
+			path = Notes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3BBED7A5227E8C0600E7C45B /* Project object */;
 }
