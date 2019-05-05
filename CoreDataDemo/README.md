@@ -4,6 +4,6 @@
 ## 通知
 Core Data框架使用通知来通知对象在托管对象上下文中发生的更改。每个托管对象上下文都发布三种类型的通知，以通知对象有关托管对象上下文中发生的更改：
 
->> `NSManagedObjectContextObjectsDidChangeNotification`
->> `NSManagedObjectContextWillSaveNotification`
->> `NSManagedObjectContextDidSaveNotification`
+* `NSManagedObjectContextObjectsDidChangeNotification`
+* `NSManagedObjectContextWillSaveNotification`
+* `NSManagedObjectContextDidSaveNotification`
