@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
     
     var managedObjectContext: NSManagedObjectContext?
 
@@ -38,7 +38,22 @@ class ViewController: UIViewController {
 // MARK: - 通知监听事件
 extension ViewController {
     @objc private func managedObjectContextObjectsDidChange(_ notification: Notification) {
+        guard let userinfo = notification.userInfo else { return }
         
+        if let inserts = userinfo[NSInsertedObjectsKey] as? Set<NSManagedObject>,
+            inserts.count > 0 {
+            
+        }
+        
+        if let updates = userinfo[NSUpdatedObjectsKey] as? Set<NSManagedObject>,
+            updates.count > 0 {
+            
+        }
+        
+        if let deletes = userinfo[NSDeletedObjectsKey] as? Set<NSManagedObject>,
+            deletes.count > 0 {
+            
+        }
     }
     
     @objc private func managedObjectContextWillSave() {
