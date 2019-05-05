@@ -8,11 +8,46 @@ Core Data框架使用通知来通知对象在托管对象上下文中发生的�
 * `NSManagedObjectContextWillSaveNotification`
 * `NSManagedObjectContextDidSaveNotification`
 
-#### 托管对象上下文发生了变化
+### 托管对象上下文发生了变化
 每次托管对象上下文中的托管对象更改时，都会广播`NSNotification.Name.NSManagedObjectContextObjectsDidChange`通知。每次从托管对象上下文插入，更新或删除托管对象时，托管对象上下文都会发布`NSNotification.Name.NSManagedObjectContextObjectsDidChange`通知。
 
-#### 托管对象上下文将保存
+### 托管对象上下文将保存
 正如`NSNotification.Name.NSManagedObjectContextWillSave`通知的名称所示，此通知在执行保存操作之前发布。
 
-#### 托管对象上下文已保存
+### 托管对象上下文已保存
 执行保存操作的托管对象上下文在成功保存其更改后发布`NSNotification.Name.NSManagedObjectContextDidSave`通知。
+
+## 监听通知
+添加对象作为`Core Data`通知的观察者很简单。在下面的示例中，视图控制器监视它具有引用的托管对象上下文。
+```
+import UIKit
+import CoreData
+
+class ViewController: UIViewController {
+    
+    var managedObjectContext: NSManagedObjectContext?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let managedObjectContext = managedObjectContext {
+            // Add Observer
+            let notificationCenter = NotificationCenter.default
+            notificationCenter.addObserver(self,
+                                           selector: #selector(managedObjectContextObjectsDidChange(_:)),
+                                           name: NSNotification.Name.NSManagedObjectContextObjectsDidChange,
+                                           object: managedObjectContext)
+            notificationCenter.addObserver(self,
+                                           selector: #selector(managedObjectContextWillSave),
+                                           name: NSNotification.Name.NSManagedObjectContextWillSave,
+                                           object: managedObjectContext)
+            notificationCenter.addObserver(self,
+                                           selector: #selector(managedObjectContextDidSave),
+                                           name: NSNotification.Name.NSManagedObjectContextDidSave,
+                                           object: managedObjectContext)
+        }
+    }
+}
+```
+
+请注意，视图控制器专门监视它具有引用的托管对象上下文。如果将`nil`作为`addObserver`的最后一个参数`（_：selector：name：object :)`传递，则视图控制器将接收应用程序创建的每个托管对象上下文的通知。虽然这看起来很方便，但如果您正在使用复杂的`Core Data`堆栈，这可能会非常难以理解。在大多数情况下，建议监视特定的托管对象上下文。
