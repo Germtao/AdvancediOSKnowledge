@@ -20,6 +20,6 @@ extension User {
     @NSManaged public var first: String?
     @NSManaged public var last: String?
     @NSManaged public var uuid: String?
-    @NSManaged public var notes: NSSet?
+    @NSManaged public var notes: Set<NSManagedObject>?
 
 }
