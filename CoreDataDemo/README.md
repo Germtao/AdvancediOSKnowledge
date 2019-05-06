@@ -81,3 +81,82 @@ class ViewController: UIViewController {
         }
     }
 ```
+
+## 监控变更
+了解之前讨论过的通知的触发内容非常重要。虽然`Core Data`是一个高性能框架，但也需要确保处理通知不会降低应用程序的速度。如果每次修改托管对象时都执行复杂操作，则可能会遇到性能问题。
+
+### 监控更新
+示例应用程序能够创建注释并将其链接到当前用户。用户可以有许多笔记，并且笔记始终与一个用户相关联。
+
+我们感兴趣的方法是`ViewController`类中的`managedObjectContextObjectsDidChange（_ :)`。 `ViewController`类观察它具有引用的托管对象上下文，并且每次在托管对象上下文中修改托管对象时，都会调用`managedObjectContextObjectsDidChange（_ :)`方法。
+```
+    @objc private func managedObjectContextObjectsDidChange(_ notification: Notification) {
+        guard let userinfo = notification.userInfo else { return }
+        
+        if let inserts = userinfo[NSInsertedObjectsKey] as? Set<NSManagedObject>,
+            inserts.count > 0 {
+            print("--- INSERTS ---")
+            print(inserts)
+            print("+++++++++++++++")
+        }
+        
+        if let updates = userinfo[NSUpdatedObjectsKey] as? Set<NSManagedObject>,
+            updates.count > 0 {
+            print("--- UPDATES ---")
+            for update in updates {
+                print(update.changedValues())
+            }
+            print("+++++++++++++++")
+        }
+        
+        if let deletes = userinfo[NSDeletedObjectsKey] as? Set<NSManagedObject>,
+            deletes.count > 0 {
+            print("--- DELETES ---")
+            print(deletes)
+            print("+++++++++++++++")
+        }
+    }
+```
+在此方法中，我们检查通知对象的`userInfo`字典，并打印插入到托管对象上下文中和从中删除的每个托管对象。 对于更新，我们打印已修改的属性和值。 `changedValues()`方法返回一个字典，其中包含已修改的属性的名称，包括属性的旧值。
+
+在模拟器中运行应用程序，点击左上角的`Profile`按钮，然后修改用户的名字。 点击底部的`保存`按钮时，将更新托管对象，并通过托管对象上下文发布通知。 你应该在Xcode的控制台中看到:
+
+```
+--- UPDATES ---
+["first": TAO, "last": TAO1]
++++++++++++++++
+```
+**`changedValues()`方法非常便于理解修改了哪些属性。**
+
+### 监控插入
+点击右上角的`+`按钮，为用户添加新笔记。在文本字段中输入标题，在文本视图中输入一些内容。点按`Save`按钮以保存记事。`NSNotification.Name.NSManagedObjectContextObjectsDidChange`通知也包含有关正在更新的托管对象的信息。
+
+```
+--- INSERTS ---
+[<Note: 0x6000009ac910> (entity: Note; id: 0x600002ae3860 <x-coredata:///Note/tB0D34294-CBD4-4C11-8464-1546836159012> ; data: {
+    content = "Todo-1";
+    createdAt = nil;
+    title = "todo-1";
+    updatedAt = nil;
+    user = "0x8ea8ec2f781e0304 <x-coredata://4E7903A8-F37A-41FB-9373-B828B26800D0/User/p1>";
+})]
++++++++++++++++
+--- UPDATES ---
+["first": TAO, "last": TAO1, "notes": {(
+    <Note: 0x600000989e00> (entity: Note; id: 0x8ea8ec2f781e0306 <x-coredata://4E7903A8-F37A-41FB-9373-B828B26800D0/Note/p1> ; data: {
+    content = "Todo-1";
+    createdAt = nil;
+    title = "todo-0";
+    updatedAt = nil;
+    user = "0x8ea8ec2f781e0304 <x-coredata://4E7903A8-F37A-41FB-9373-B828B26800D0/User/p1>";
+}),
+    <Note: 0x6000009ac910> (entity: Note; id: 0x600002ae3860 <x-coredata:///Note/tB0D34294-CBD4-4C11-8464-1546836159012> ; data: {
+    content = "Todo-1";
+    createdAt = nil;
+    title = "todo-1";
+    updatedAt = nil;
+    user = "0x8ea8ec2f781e0304 <x-coredata://4E7903A8-F37A-41FB-9373-B828B26800D0/User/p1>";
+})
+)}]
++++++++++++++++
+```
