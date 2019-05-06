@@ -10,12 +10,14 @@ import UIKit
 import CoreData
 
 class CoreDataManager: NSObject {
-    lazy var managedObjectModel: NSManagedObjectModel = {
+    /// 加载数据模型, 类型 momd
+    private lazy var managedObjectModel: NSManagedObjectModel = {
         let modelURL = Bundle.main.url(forResource: "Notes", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
-    lazy var storeCoordinator: NSPersistentStoreCoordinator = {
+    /// 创建持久化数据助理
+    private lazy var storeCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         let url = self.applicationDocumentsDirectory.appendingPathComponent("Notes.sqlite")
         let failureReason = "There was an error creating or loading the application's saved data."

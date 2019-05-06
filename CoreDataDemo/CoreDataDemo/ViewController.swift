@@ -115,7 +115,6 @@ extension ViewController: NSFetchedResultsControllerDelegate {
 extension ViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         if let sections = resultsController.sections {
-            print("============ \(sections.count)")
             return sections.count
         }
         return 0
@@ -123,7 +122,6 @@ extension ViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let sections = resultsController.sections {
-            print("------------\(sections[section].numberOfObjects)")
             return sections[section].numberOfObjects
         }
         return 0
@@ -131,7 +129,6 @@ extension ViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: noteCell, for: indexPath)
-        print("zzzzzzzzzzzzzzzzzz \(indexPath.row)")
         configureCell(cell, atIndexPath: indexPath)
         return cell
     }
