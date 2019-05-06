@@ -36,11 +36,46 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="首页" id="AyM-HL-cxq"/>
+                    <navigationItem key="navigationItem" title="首页" id="AyM-HL-cxq">
+                        <barButtonItem key="rightBarButtonItem" title="设置" id="Xqg-90-P3h">
+                            <connections>
+                                <segue destination="8zv-qc-2q0" kind="show" id="RVZ-A8-Uph"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--设置-->
+        <scene sceneID="WMm-jM-96o">
+            <objects>
+                <tableViewController id="8zv-qc-2q0" customClass="SettingsViewController" customModule="SwiftWithMVVM" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="cwf-lT-DAk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsTableViewCell" id="mdR-K5-9z0" customClass="SettingsTableViewCell" customModule="SwiftWithMVVM" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mdR-K5-9z0" id="BvU-GD-82k">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8zv-qc-2q0" id="ByM-4R-JYA"/>
+                            <outlet property="delegate" destination="8zv-qc-2q0" id="Kur-hr-WXg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="设置" id="cMh-r4-uSS"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Avn-V8-nmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1820" y="441"/>
         </scene>
         <!--个人中心-->
         <scene sceneID="bab-Yq-L7G">
@@ -74,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2M4-fl-HVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1822" y="138"/>
+            <point key="canvasLocation" x="1800" y="-265"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TeL-97-R2Y">
