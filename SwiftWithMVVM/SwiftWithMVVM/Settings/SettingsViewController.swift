@@ -31,33 +31,20 @@ class SettingsViewController: UITableViewController {
         
         switch section {
         case .time:
-            cell.textLabel?.text = (indexPath.row == 0) ? "12 Hours" : "24 Hours"
-            
-            let timeNotation = UserDefaults.timeNotation()
-            if indexPath.row == timeNotation.rawValue {
-                cell.accessoryType = .checkmark
-            } else {
-                cell.accessoryType = .none
-            }
+            guard let timeNotation = TimeNotation(rawValue: indexPath.row) else { fatalError("Unexpected Time Notation") }
+            let viewModel = SettingsTimeViewModel(timeNotation: timeNotation)
+            cell.textLabel?.text = viewModel.text
+            cell.accessoryType = viewModel.accessoryType
         case .units:
-            cell.textLabel?.text = (indexPath.row == 0) ? "Imperial" : "Metric"
-            
-            let unitsNotation = UserDefaults.unitsNotation()
-            if indexPath.row == unitsNotation.rawValue {
-                cell.accessoryType = .checkmark
-            } else {
-                cell.accessoryType = .none
-            }
-            
+            guard let unitsNotation = UnitsNotation(rawValue: indexPath.row) else { fatalError("Unexpected Units Notation") }
+            let viewModel = SettingsUnitsViewModel(unitsNotation: unitsNotation)
+            cell.textLabel?.text = viewModel.text
+            cell.accessoryType = viewModel.accessoryType
         case .temperature:
-            cell.textLabel?.text = (indexPath.row == 0) ? "Fahrenheit" : "Celcius"
-            
-            let temperatureNotation = UserDefaults.temperatureNotation()
-            if indexPath.row == temperatureNotation.rawValue {
-                cell.accessoryType = .checkmark
-            } else {
-                cell.accessoryType = .none
-            }
+            guard let temperatureNotation = TemperatureNotation(rawValue: indexPath.row) else { fatalError("Unexpected Temperature Notation") }
+            let viewModel = SettingsTemperatureViewModel(temperatureNotation: temperatureNotation)
+            cell.textLabel?.text = viewModel.text
+            cell.accessoryType = viewModel.accessoryType
         }
 
         return cell
