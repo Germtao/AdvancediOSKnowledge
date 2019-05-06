@@ -160,3 +160,27 @@ class ViewController: UIViewController {
 )}]
 +++++++++++++++
 ```
+
+### 监控删除
+```
+--- UPDATES ---
+["last": TAO1, "first": TAO, "notes": {(
+    <Note: 0x6000009ac910> (entity: Note; id: 0x600002ae3860 <x-coredata:///Note/tB0D34294-CBD4-4C11-8464-1546836159012> ; data: {
+    content = "Todo-1";
+    createdAt = nil;
+    title = "todo-1";
+    updatedAt = nil;
+    user = "0x8ea8ec2f781e0304 <x-coredata://4E7903A8-F37A-41FB-9373-B828B26800D0/User/p1>";
+})
+)}]
++++++++++++++++
+--- DELETES ---
+[<Note: 0x600000989e00> (entity: Note; id: 0x8ea8ec2f781e0306 <x-coredata://4E7903A8-F37A-41FB-9373-B828B26800D0/Note/p1> ; data: {
+    content = "Todo-1";
+    createdAt = nil;
+    title = "todo-0";
+    updatedAt = nil;
+    user = nil;
+})]
++++++++++++++++
+```
