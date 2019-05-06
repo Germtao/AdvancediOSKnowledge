@@ -13,7 +13,7 @@ enum TimeNotation: Int {
     case twentyFourHour
 }
 
-struct SettingsTimeViewModel {
+struct SettingsTimeViewModel: SettingsRepresentable {
     let timeNotation: TimeNotation
     
     var text: String {

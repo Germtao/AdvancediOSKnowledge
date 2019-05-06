@@ -22,5 +22,10 @@ class SettingsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configureCell(withViewModel viewModel: SettingsRepresentable) {
+        textLabel?.text = viewModel.text
+        accessoryType = viewModel.accessoryType
+    }
 
 }

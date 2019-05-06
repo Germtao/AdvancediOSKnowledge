@@ -23,11 +23,12 @@
 		3BBED7812276FB2300E7C45B /* ProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7802276FB2300E7C45B /* ProfileViewModelTests.swift */; };
 		3BBED7832276FD5F00E7C45B /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7822276FD5F00E7C45B /* Double.swift */; };
 		3BBED7E522803C3100E7C45B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7E422803C3100E7C45B /* SettingsViewController.swift */; };
-		3BBED7E722803C7900E7C45B /* SettingsViewTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7E622803C7900E7C45B /* SettingsViewTimeViewModel.swift */; };
+		3BBED7E722803C7900E7C45B /* SettingsTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7E622803C7900E7C45B /* SettingsTimeViewModel.swift */; };
 		3BBED7E922803FEA00E7C45B /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7E822803FEA00E7C45B /* SettingsTableViewCell.swift */; };
 		3BBED7EB2280418800E7C45B /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7EA2280418800E7C45B /* UserDefaults.swift */; };
 		3BBED7ED228046D100E7C45B /* SettingsUnitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7EC228046D100E7C45B /* SettingsUnitsViewModel.swift */; };
 		3BBED7EF228047D700E7C45B /* SettingsTemperatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7EE228047D700E7C45B /* SettingsTemperatureViewModel.swift */; };
+		3BBED7F122804A2F00E7C45B /* SettingsRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBED7F022804A2F00E7C45B /* SettingsRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,11 +71,12 @@
 		3BBED7802276FB2300E7C45B /* ProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelTests.swift; sourceTree = "<group>"; };
 		3BBED7822276FD5F00E7C45B /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		3BBED7E422803C3100E7C45B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		3BBED7E622803C7900E7C45B /* SettingsViewTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewTimeViewModel.swift; sourceTree = "<group>"; };
+		3BBED7E622803C7900E7C45B /* SettingsTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTimeViewModel.swift; sourceTree = "<group>"; };
 		3BBED7E822803FEA00E7C45B /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		3BBED7EA2280418800E7C45B /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		3BBED7EC228046D100E7C45B /* SettingsUnitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUnitsViewModel.swift; sourceTree = "<group>"; };
 		3BBED7EE228047D700E7C45B /* SettingsTemperatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTemperatureViewModel.swift; sourceTree = "<group>"; };
+		3BBED7F022804A2F00E7C45B /* SettingsRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,9 +177,10 @@
 			children = (
 				3BBED7E422803C3100E7C45B /* SettingsViewController.swift */,
 				3BBED7E822803FEA00E7C45B /* SettingsTableViewCell.swift */,
-				3BBED7E622803C7900E7C45B /* SettingsViewTimeViewModel.swift */,
+				3BBED7E622803C7900E7C45B /* SettingsTimeViewModel.swift */,
 				3BBED7EC228046D100E7C45B /* SettingsUnitsViewModel.swift */,
 				3BBED7EE228047D700E7C45B /* SettingsTemperatureViewModel.swift */,
+				3BBED7F022804A2F00E7C45B /* SettingsRepresentable.swift */,
 				3BBED7EA2280418800E7C45B /* UserDefaults.swift */,
 			);
 			path = Settings;
@@ -317,9 +320,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BBED7F122804A2F00E7C45B /* SettingsRepresentable.swift in Sources */,
 				3BBED7EF228047D700E7C45B /* SettingsTemperatureViewModel.swift in Sources */,
 				3BBED74122769B7800E7C45B /* ViewController.swift in Sources */,
-				3BBED7E722803C7900E7C45B /* SettingsViewTimeViewModel.swift in Sources */,
+				3BBED7E722803C7900E7C45B /* SettingsTimeViewModel.swift in Sources */,
 				3BBED77122769C0600E7C45B /* Profile.swift in Sources */,
 				3BBED7ED228046D100E7C45B /* SettingsUnitsViewModel.swift in Sources */,
 				3BBED7832276FD5F00E7C45B /* Double.swift in Sources */,

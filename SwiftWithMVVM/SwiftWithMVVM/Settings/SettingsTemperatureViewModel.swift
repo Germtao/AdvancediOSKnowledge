@@ -13,7 +13,7 @@ enum TemperatureNotation: Int {
     case celcius
 }
 
-struct SettingsTemperatureViewModel {
+struct SettingsTemperatureViewModel: SettingsRepresentable {
     let temperatureNotation: TemperatureNotation
     
     var text: String {

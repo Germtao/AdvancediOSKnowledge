@@ -29,35 +29,24 @@ class SettingsViewController: UITableViewController {
         guard let section = SettingsSection(rawValue: indexPath.section) else { fatalError("Unexpected Section") }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.reuseIdentifier, for: indexPath) as? SettingsTableViewCell else { fatalError("Unexpected Settings Table View Cell") }
         
+        var viewModel: SettingsRepresentable?
+        
         switch section {
         case .time:
             guard let timeNotation = TimeNotation(rawValue: indexPath.row) else { fatalError("Unexpected Time Notation") }
-            let viewModel = SettingsTimeViewModel(timeNotation: timeNotation)
-            cell.textLabel?.text = viewModel.text
-            cell.accessoryType = viewModel.accessoryType
+            viewModel = SettingsTimeViewModel(timeNotation: timeNotation)
         case .units:
             guard let unitsNotation = UnitsNotation(rawValue: indexPath.row) else { fatalError("Unexpected Units Notation") }
-            let viewModel = SettingsUnitsViewModel(unitsNotation: unitsNotation)
-            cell.textLabel?.text = viewModel.text
-            cell.accessoryType = viewModel.accessoryType
+            viewModel = SettingsUnitsViewModel(unitsNotation: unitsNotation)
         case .temperature:
             guard let temperatureNotation = TemperatureNotation(rawValue: indexPath.row) else { fatalError("Unexpected Temperature Notation") }
-            let viewModel = SettingsTemperatureViewModel(temperatureNotation: temperatureNotation)
-            cell.textLabel?.text = viewModel.text
-            cell.accessoryType = viewModel.accessoryType
+            viewModel = SettingsTemperatureViewModel(temperatureNotation: temperatureNotation)
+        }
+        
+        if let viewModel = viewModel {
+            cell.configureCell(withViewModel: viewModel)
         }
 
         return cell
     }
-    
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let section = SettingsSection(rawValue: indexPath.section) else { fatalError("Unexpected Section") }
-//
-//        switch section {
-//        case .time:
-//            indexPath.row == 0 ? UserDefaults.set(timeNotation: TimeNotation.twelveHour) :
-//        default:
-//            <#code#>
-//        }
-//    }
 }

@@ -13,7 +13,7 @@ enum UnitsNotation: Int {
     case metric
 }
 
-struct SettingsUnitsViewModel {
+struct SettingsUnitsViewModel: SettingsRepresentable {
     let unitsNotation: UnitsNotation
     
     var text: String {
