@@ -4,9 +4,9 @@
 ## 通知
 `Core Data`框架使用通知来通知对象在托管对象上下文中发生的更改。每个托管对象上下文都发布三种类型的通知，以通知对象有关托管对象上下文中发生的更改：
 
-* `NSManagedObjectContextObjectsDidChangeNotification`
-* `NSManagedObjectContextWillSaveNotification`
-* `NSManagedObjectContextDidSaveNotification`
+* `NSNotification.Name.NSManagedObjectContextObjectsDidChange`
+* `NSNotification.Name.NSManagedObjectContextWillSave`
+* `NSNotification.Name.NSManagedObjectContextDidSave`
 
 ### 托管对象上下文发生了变化
 每次托管对象上下文中的托管对象更改时，都会广播`NSNotification.Name.NSManagedObjectContextObjectsDidChange`通知。每次从托管对象上下文插入，更新或删除托管对象时，托管对象上下文都会发布`NSNotification.Name.NSManagedObjectContextObjectsDidChange`通知。
